@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AllNetworks_School_Management_System</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_your_role_to_get_started">Select your role to get started</string>
+    <string name="teacher">Teacher</string>
+    <string name="welcome">Welcome!</string>
+    <string name="signInContinue">Sign in to continue</string>
+    <string name="emailAddress">Email Address</string>
+    <string name="password">Password</string>
+    <string name="passwordHint">Password</string>
+    <string name="logIn">Log in</string>
+
+</resources>

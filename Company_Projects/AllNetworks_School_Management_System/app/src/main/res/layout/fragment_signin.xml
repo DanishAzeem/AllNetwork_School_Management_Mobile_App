@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.allnetworks.allnetworks_school_management_system.views.signUpProcess.SignInVM" />
+
+
+    </data>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".views.signUpProcess.SigninFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/app_primary_dark" />
+
+            <View
+                android:id="@+id/topCircleShape"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/signin_bg" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mainCardLayout"
+                android:backgroundTint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="20dp">
+
+                <LinearLayout
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginVertical="15dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvSubheading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/select_your_role_to_get_started"
+                        android:textColor="#9e9070"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardParent"
+                            android:layout_width="0dp"
+                            android:layout_height="110dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/app_primary"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#4a4330"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <!-- Active indicator bar -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="4dp">
+
+                                    <View
+                                        android:id="@+id/barParent"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="4dp"
+                                        android:layout_marginHorizontal="8dp"
+                                        android:layout_marginTop="1dp"
+                                        android:background="#c9a84c"
+                                        android:visibility="gone" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <!-- Icon background chip -->
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/iconParent"
+                                        android:layout_width="52dp"
+                                        android:layout_height="52dp"
+                                        app:cardBackgroundColor="#3e3826"
+                                        app:cardCornerRadius="14dp"
+                                        app:cardElevation="0dp"
+                                        app:strokeColor="#5a5135"
+                                        app:strokeWidth="1dp">
+
+                                        <ImageView
+                                            android:layout_width="26dp"
+                                            android:layout_height="26dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/parent_icon"
+                                            android:tint="#c9a84c" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <TextView
+                                        android:id="@+id/tvParent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:fontFamily="@font/inter_bold"
+                                        android:text="Parent"
+                                        android:textColor="#b0a070"
+                                        android:textSize="13sp" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardStudent"
+                            android:layout_width="0dp"
+                            android:layout_height="110dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#332e21"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#c9a84c"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <!-- Active indicator bar -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="4dp">
+
+                                    <View
+                                        android:id="@+id/barStudent"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="4dp"
+                                        android:layout_marginHorizontal="8dp"
+                                        android:layout_marginTop="1dp"
+                                        android:background="#c9a84c"
+                                        android:visibility="visible" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/iconStudent"
+                                        android:layout_width="52dp"
+                                        android:layout_height="52dp"
+                                        app:cardBackgroundColor="#4a4220"
+                                        app:cardCornerRadius="14dp"
+                                        app:cardElevation="0dp"
+                                        app:strokeColor="#c9a84c"
+                                        app:strokeWidth="1dp">
+
+                                        <ImageView
+                                            android:layout_width="26dp"
+                                            android:layout_height="26dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/student_icon"
+                                            android:tint="#c9a84c" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <TextView
+                                        android:id="@+id/tvStudent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:fontFamily="@font/inter_bold"
+                                        android:text="Student"
+                                        android:textColor="#f0e8cc"
+                                        android:textSize="13sp" />
+
+                                </LinearLayout>
+
+                                <!-- Icon background chip -->
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardTeacher"
+                            android:layout_width="0dp"
+                            android:layout_height="110dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#2a2619"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#4a4330"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <!-- Active indicator bar -->
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="4dp">
+
+                                    <View
+                                        android:id="@+id/barTeacher"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="4dp"
+                                        android:layout_marginHorizontal="8dp"
+                                        android:layout_marginTop="1dp"
+                                        android:background="#c9a84c"
+                                        android:visibility="gone" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <!-- Icon background chip -->
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/iconTeacher"
+                                        android:layout_width="52dp"
+                                        android:layout_height="52dp"
+                                        app:cardBackgroundColor="#3e3826"
+                                        app:cardCornerRadius="14dp"
+                                        app:cardElevation="0dp"
+                                        app:strokeColor="#5a5135"
+                                        app:strokeWidth="1dp">
+
+                                        <ImageView
+                                            android:layout_width="26dp"
+                                            android:layout_height="26dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/teacher_icon"
+                                            android:tint="#c9a84c" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <TextView
+                                        android:id="@+id/tvTeacher"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:fontFamily="@font/inter_bold"
+                                        android:text="@string/teacher"
+                                        android:textColor="#b0a070"
+                                        android:textSize="13sp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout_signInEmail"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginHorizontal="20dp"
+                        app:startIconTint="@color/black"
+                        app:startIconDrawable="@drawable/ic_email"
+                        app:passwordToggleTint="@color/semiTransparentBlack"
+                        android:background="@drawable/bottom_line_drawable"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:textColorHint="@color/semiTransparentBlack">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/signInEmail"
+                            android:hint="@string/emailAddress"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/inter_regular"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout_signInPassword"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginHorizontal="20dp"
+                        app:passwordToggleEnabled="true"
+                        app:startIconDrawable="@drawable/ic_password"
+                        app:startIconTint="@color/black"
+                        app:passwordToggleTint="@color/semiTransparentBlack"
+                        android:background="@drawable/bottom_line_drawable"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:textColorHint="@color/semiTransparentBlack">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/signInPassword"
+                            android:hint="@string/password"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/inter_regular" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:onClick="@{viewModel::onClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:id="@+id/loginBtn"
+                        android:layout_marginTop="25dp"
+                        app:backgroundTint="@color/app_primary"
+                        android:textColor="@color/white"
+                        app:cornerRadius="8dp"
+                        android:text="@string/logIn"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/inter_medium" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--        <TextView-->
+            <!--            android:layout_above="@+id/mainCardLayout"-->
+            <!--            android:layout_marginBottom="70dp"-->
+            <!--            android:id="@+id/welcomeTV"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="38dp"-->
+            <!--            android:fontFamily="@font/inter_semi_bold"-->
+            <!--            android:text="@string/welcome"-->
+            <!--            android:textAlignment="center"-->
+            <!--            android:textColor="@color/white"-->
+            <!--            android:textSize="32sp" />-->
+
+            <!--        <TextView-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="@string/signInContinue"-->
+            <!--            android:fontFamily="@font/inter_regular"-->
+            <!--            android:textSize="16sp"-->
+            <!--            android:textAlignment="center"-->
+            <!--            android:textColor="@color/white"-->
+            <!--            android:layout_above="@+id/mainCardLayout"-->
+            <!--            android:layout_marginBottom="45dp"-->
+            <!--            />-->
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

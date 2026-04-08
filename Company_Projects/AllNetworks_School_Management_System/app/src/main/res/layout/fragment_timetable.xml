@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.allnetworks.allnetworks_school_management_system.views.student.timeTable.TimeTableVM" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/layout_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="22dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/white"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:onClick="@{viewModel::onClick}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_back" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center"
+                android:text="Time Table"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:visibility="invisible"
+                android:contentDescription="Time Table"
+                app:srcCompat="@drawable/info_2" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:background="@color/white"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="70dp"
+                            android:layout_height="@dimen/header_row_height"
+                            android:background="@drawable/cell_border_bottom_right" />
+
+                        <TextView
+                            style="@style/timeTableWeeksDaysBg"
+                            android:layout_width="70dp"
+                            android:layout_height="@dimen/header_row_height"
+                            android:background="@drawable/cell_border_bottom_right_colorful"
+                            android:text="Mon." />
+
+                        <TextView
+                            style="@style/timeTableWeeksDaysBg"
+                            android:layout_width="70dp"
+                            android:layout_height="@dimen/header_row_height"
+                            android:background="@drawable/cell_border_bottom_right_colorful"
+                            android:text="Tue." />
+
+                        <TextView
+                            style="@style/timeTableWeeksDaysBg"
+                            android:layout_width="70dp"
+                            android:layout_height="@dimen/header_row_height"
+                            android:background="@drawable/cell_border_bottom_right_colorful"
+                            android:text="Wed." />
+
+                        <TextView
+                            style="@style/timeTableWeeksDaysBg"
+                            android:layout_width="70dp"
+                            android:layout_height="@dimen/header_row_height"
+                            android:background="@drawable/cell_border_bottom_right_colorful"
+                            android:text="Thu." />
+
+                        <TextView
+                            style="@style/timeTableWeeksDaysBg"
+                            android:layout_width="70dp"
+                            android:layout_height="@dimen/header_row_height"
+                            android:background="@drawable/cell_border_bottom_right_colorful"
+                            android:text="Fri." />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv1"
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/item_timetable_times" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv2"
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/item_timetable_times" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv3"
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/item_timetable_times" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv4"
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/item_timetable_times" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv5"
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/item_timetable_times" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv6"
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/item_timetable_times" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </HorizontalScrollView>
+
+
+    </LinearLayout>
+</layout>
+

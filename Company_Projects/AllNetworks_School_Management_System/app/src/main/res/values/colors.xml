@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="app_primary">#332e21</color>
+    <color name="app_primary_dark">#1a1710</color>
+    <color name="blackTransparent">#80000000</color>
+    <color name="blackShadeTransparent">#6E000000</color>
+    <color name="semiTransparentBlack">#33000000</color>
+    <color name="semiTransparentBlack2">#40000000</color>
+    <color name="semiTransparentBluish">#26262BB2</color>
+    <color name="darkGray">#090909</color>
+    <color name="green">#018754</color>
+    <color name="timetablebg">#e0d1d1</color>
+    <color name="transparent_red">#EE706E</color>
+
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#888888</color>
+    <color name="border_color">#E0E0E0</color>
+
+</resources>
