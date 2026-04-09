@@ -25,6 +25,16 @@
             app:destination="@id/homeWorkAssignment"
             app:enterAnim="@anim/zoom_in_zoom_out"
             app:exitAnim="@anim/exit"  />
+        <action
+            android:id="@+id/action_signInFragment_to_attendanceFragment"
+            app:destination="@id/AttendanceFragment"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit"  />
+        <action
+            android:id="@+id/action_signInFragment_to_resultGradesFragment"
+            app:destination="@id/ResultGradesFragment"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit"  />
 <!--            app:launchSingleTop="true"-->
 <!--            app:popUpToInclusive="true"-->
 <!--        app:popUpTo="@id/homeFragment"-->
@@ -49,6 +59,20 @@
         android:name="com.allnetworks.allnetworks_school_management_system.views.student.assignment.AssignmentFragment"
         android:label="HomeWorkAssignment"
         tools:layout="@layout/fragment_home_work_assignment"
+        />
+
+    <fragment
+        android:id="@+id/AttendanceFragment"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.student.attendance.AttendanceFragment"
+        android:label="AttendanceFragment"
+        tools:layout="@layout/fragment_attendance"
+        />
+
+    <fragment
+        android:id="@+id/ResultGradesFragment"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.student.resultGrades.ResultGradesFragment"
+        android:label="ResultGradesFragment"
+        tools:layout="@layout/fragment_result_grades"
         />
 
 </navigation>

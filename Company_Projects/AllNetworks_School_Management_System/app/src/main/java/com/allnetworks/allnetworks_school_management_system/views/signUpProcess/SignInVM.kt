@@ -24,7 +24,7 @@ class SignInVM @Inject constructor(
         when(view.id){
             R.id.loginBtn -> {
                 Log.d("Signin Fragment ", "Called")
-                view.navigateWithId(R.id.action_signInFragment_to_homeWorkAssignmentFragment)
+                view.navigateWithId(R.id.action_signInFragment_to_resultGradesFragment)
 
             }
 

@@ -13,6 +13,11 @@
     <color name="green">#018754</color>
     <color name="timetablebg">#e0d1d1</color>
     <color name="transparent_red">#EE706E</color>
+    <color name="light_black">#3B3B3B</color>
+    <color name="light_black_color">#CC3C3C3C</color>
+    <color name="red">#FF0000</color>
+
+
 
     <color name="text_primary">#1A1A1A</color>
     <color name="text_secondary">#888888</color>

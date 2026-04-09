@@ -29,7 +29,6 @@ class TimetableFragment : Fragment(R.layout.fragment_timetable) {
 
 //        val headerView = layoutInflater.inflate(R.layout.list_item_timetable_times, null)
 
-
         adapter = TimeTableAdapter(data)
         adapter2 = TimeTableAdapter(data2)
 

@@ -5,56 +5,45 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TableRow
+import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.allnetworks.allnetworks_school_management_system.R
+import com.allnetworks.allnetworks_school_management_system.databinding.FragmentResultGradesBinding
+import com.allnetworks.allnetworks_school_management_system.views.student.timeTable.TimeTableAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ResultGradesFragment : Fragment(R.layout.fragment_result_grades) {
+    lateinit var binding: FragmentResultGradesBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ResultGradesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ResultGradesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentResultGradesBinding.bind(view)
+        val data = listOf(
+            listOf("Name", "Age", "City", "Roll No", "Address", "Address 2", "Address 3"),
+            listOf("Ali", "25", "Lahore", "roll-1230", "abc", "xyz", "mno"),
+            listOf("Ahmed", "28", "Karachi", "roll-1230", "abc", "xyz", "mno"),
+            listOf("Sara", "22", "Islamabad", "roll-1230", "abc", "xyz", "mno")
+        )
+        addTable(data)
+    }
+    fun addTable(data: List<List<String>>) {
+        binding.tableLayout.removeAllViews()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        data.forEach { rowData ->
+            val row = TableRow(context)
+
+            rowData.forEach { cell ->
+                val tv = TextView(context)
+                tv.text = cell
+                tv.setPadding(12, 12, 12, 12)
+                tv.setBackgroundResource(R.drawable.ic_rectangle2)
+
+                row.addView(tv)
+            }
+            binding.tableLayout.addView(row)
         }
     }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_result_grades, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ResultGradesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ResultGradesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
-}
+
+
