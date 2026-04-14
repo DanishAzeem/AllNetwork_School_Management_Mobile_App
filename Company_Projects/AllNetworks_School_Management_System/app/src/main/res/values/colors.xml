@@ -15,7 +15,22 @@
     <color name="transparent_red">#EE706E</color>
     <color name="light_black">#3B3B3B</color>
     <color name="light_black_color">#CC3C3C3C</color>
+    <color name="textColor">#3C3C3C</color>
     <color name="red">#FF0000</color>
+    <color name="_3b3b3b">#3B3B3B</color>
+    <color name="gray">#F8F8F8</color>
+    <color name="background_color">#FDFDFD</color>
+    <color name="teal_200">#80CBC4</color>
+    <color name="purple_200">#CE93D8</color>
+    <color name="orange">#FFA500</color>
+    <color name="blue">#0000FF</color>
+    <color name="warm_off_white">#FAF7F2</color>
+    <color name="stroke_color">#604F4F4F</color>
+    <color name="_838383">#838383</color>
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.AllNetworks_School_Management_System" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
@@ -13,12 +13,12 @@
         <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="timeTableWeeksDaysBg" parent = "">
+    <style name="timeTableWeeksDaysBg" parent="">
         <item name="android:gravity">center</item>
         <item name="fontFamily">@font/inter_bold</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/text_primary</item>
-<!--        <item name="android:backgroundTint">#e0d1d1</item>-->
+        <!--        <item name="android:backgroundTint">#e0d1d1</item>-->
     </style>
 
     <!-- Tab Layout Style -->
@@ -48,6 +48,54 @@
 
     </style>
 
+    <style name="TV16dpInterMedium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="TV12dpInter">
+        <item name="android:background">@drawable/ic_rectangle</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="fontFamily">@font/inter</item>
+    </style>
+
+    <style name="TV14dpInter">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="MaterialTilOutlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxStrokeWidth">0.5dp</item>
+        <item name="boxStrokeColor">@color/stroke_color</item>
+        <item name="hintTextColor">@color/_838383</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="boxCollapsedPaddingTop">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="TextInputET">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="TextInputHintSize">
+        <item name="android:textSize">10sp</item>
+    </style>
 
 
 </resources>

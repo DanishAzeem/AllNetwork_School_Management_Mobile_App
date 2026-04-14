@@ -6,22 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.allnetworks.allnetworks_school_management_system.R
 import com.allnetworks.allnetworks_school_management_system.databinding.FragmentTimetableBinding
+import com.allnetworks.allnetworks_school_management_system.utils.AppController
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class TimetableFragment : Fragment(R.layout.fragment_timetable) {
 
     lateinit var binding: FragmentTimetableBinding
-
     private var adapter = TimeTableAdapter()
     private var adapter2 = TimeTableAdapter()
+
+    private val viewModel by viewModels<TimeTableVM>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentTimetableBinding.bind(view)
+        AppController.navListener?.isLockDrawer(true)
+        binding.viewModel = viewModel
+
 
         val data2 = arrayListOf("10:00 AM - 11:00 AM", "10:00 AM - 12:00 PM", "12:00 PM - 1:00 PM", "1:00 PM - 2:00 PM", "2:00 AM - 3:00 PM")
         val data = arrayListOf("Math", "Islamiyat", "Urdu", "English", "Pak Study",)

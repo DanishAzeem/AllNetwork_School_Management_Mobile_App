@@ -9,6 +9,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.allnetworks.allnetworks_school_management_system.R
 import com.allnetworks.allnetworks_school_management_system.databinding.FragmentHomeWorkAssignmentBinding
+import com.allnetworks.allnetworks_school_management_system.utils.AppController
 import com.allnetworks.allnetworks_school_management_system.views.signUpProcess.SignInVM
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlin.getValue
@@ -23,6 +24,7 @@ class AssignmentFragment : Fragment(R.layout.fragment_home_work_assignment) {
 
         binding = FragmentHomeWorkAssignmentBinding.bind(view)
         binding.viewModel = viewModel
+        AppController.navListener?.isLockDrawer(true)
 
         val fragmentList = arrayListOf(
             FinishTask(),

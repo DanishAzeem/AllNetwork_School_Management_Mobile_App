@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import com.allnetworks.allnetworks_school_management_system.interfaces.NavigationListener
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -13,12 +14,12 @@ import java.lang.ref.WeakReference
 
 @HiltAndroidApp
 class AppController: Application() {
-
     private var currentActivity: Activity? = null
-
     companion object {
 
         var context: WeakReference<Context>? = null
+        var navListener: NavigationListener? = null
+
 
         @JvmStatic
         fun getAppControllerContext(): Context {

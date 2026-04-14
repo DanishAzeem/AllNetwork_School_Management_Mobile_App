@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragmentAttendance"
+        android:icon="@drawable/ic_attendance"
+        android:title="@string/attendance" />
+    <item
+        android:id="@+id/fragmentGrades"
+        android:icon="@drawable/ic_grades"
+        android:title="@string/grades" />
+    <item
+        android:id="@+id/fragmentHome"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/fragmentTimeTable"
+        android:icon="@drawable/ic_timetable"
+        android:title="@string/time_table" />
+    <item
+        android:id="@+id/fragmentAssignment"
+        android:icon="@drawable/ic_assignment"
+        android:title="@string/assignment" />
+
+</menu>

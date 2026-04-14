@@ -11,5 +11,22 @@
     <string name="passwordHint">Password</string>
     <string name="logIn">Log in</string>
     <string name="work">Work</string>
+    <string name="home">Home</string>
+    <string name="grades">Grades</string>
+    <string name="attendance">Attendance</string>
+    <string name="time_table">Time Table</string>
+    <string name="assignment">Assignment</string>
+    <string name="terms_and_conditions">Terms &amp; Condition</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="version_1_0_0">Version 1.0.0</string>
+    <string name="my_classes">My Classes</string>
+    <string name="_60_min">60 min</string>
+    <string name="free_period">Free period</string>
+    <string name="assignments">Assignments</string>
+    <string name="create">create</string>
+    <string name="dot">•</string>
+    <string name="chapter_6_practice_problems">Chapter 6 - Practice Problems</string>
 
 </resources>

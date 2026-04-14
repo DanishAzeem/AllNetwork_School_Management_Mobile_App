@@ -9,70 +9,91 @@
         android:id="@+id/signinFragment"
         android:name="com.allnetworks.allnetworks_school_management_system.views.signUpProcess.SigninFragment"
         android:label="Signin"
-        tools:layout="@layout/fragment_signin" >
+        tools:layout="@layout/fragment_signin">
         <action
             android:id="@+id/action_signInFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
+            app:destination="@id/HomeFragment"
             app:enterAnim="@anim/zoom_in_zoom_out"
-            app:exitAnim="@anim/exit"  />
-        <action
-            android:id="@+id/action_signInFragment_to_timeTableFragment"
-            app:destination="@id/timeTableFragment"
-            app:enterAnim="@anim/zoom_in_zoom_out"
-            app:exitAnim="@anim/exit"  />
-        <action
-            android:id="@+id/action_signInFragment_to_homeWorkAssignmentFragment"
-            app:destination="@id/homeWorkAssignment"
-            app:enterAnim="@anim/zoom_in_zoom_out"
-            app:exitAnim="@anim/exit"  />
-        <action
-            android:id="@+id/action_signInFragment_to_attendanceFragment"
-            app:destination="@id/AttendanceFragment"
-            app:enterAnim="@anim/zoom_in_zoom_out"
-            app:exitAnim="@anim/exit"  />
-        <action
-            android:id="@+id/action_signInFragment_to_resultGradesFragment"
-            app:destination="@id/ResultGradesFragment"
-            app:enterAnim="@anim/zoom_in_zoom_out"
-            app:exitAnim="@anim/exit"  />
-<!--            app:launchSingleTop="true"-->
-<!--            app:popUpToInclusive="true"-->
-<!--        app:popUpTo="@id/homeFragment"-->
+            app:exitAnim="@anim/exit" />
     </fragment>
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/HomeFragment"
         android:name="com.allnetworks.allnetworks_school_management_system.views.home.Home"
         android:label="Home"
-        tools:layout="@layout/fragment_home"
-        />
+        tools:layout="@layout/fragment_home">
+        <!--        <action-->
+        <!--            android:id="@+id/action_homeFragment_to_timeTableFragment"-->
+        <!--            app:destination="@id/TimeTableFragment"-->
+        <!--            app:enterAnim="@anim/zoom_in_zoom_out"-->
+        <!--            app:exitAnim="@anim/exit"  />-->
+        <!--        <action-->
+        <!--            android:id="@+id/action_homeFragment_to_homeWorkAssignmentFragment"-->
+        <!--            app:destination="@id/HomeWorkAssignment"-->
+        <!--            app:enterAnim="@anim/zoom_in_zoom_out"-->
+        <!--            app:exitAnim="@anim/exit"  />-->
+        <!--        <action-->
+        <!--            android:id="@+id/action_homeFragment_to_attendanceFragment"-->
+        <!--            app:destination="@id/AttendanceFragment"-->
+        <!--            app:enterAnim="@anim/zoom_in_zoom_out"-->
+        <!--            app:exitAnim="@anim/exit"  />-->
+        <!--        <action-->
+        <!--            android:id="@+id/action_homeFragment_to_resultGradesFragment"-->
+        <!--            app:destination="@id/ResultGradesFragment"-->
+        <!--            app:enterAnim="@anim/zoom_in_zoom_out"-->
+        <!--            app:exitAnim="@anim/exit"  />-->
+
+    </fragment>
 
     <fragment
-        android:id="@+id/timeTableFragment"
+        android:id="@+id/TimeTableFragment"
         android:name="com.allnetworks.allnetworks_school_management_system.views.student.timeTable.TimetableFragment"
         android:label="TimeTable"
-        tools:layout="@layout/fragment_timetable"
-        />
+        tools:layout="@layout/fragment_timetable" />
 
     <fragment
-        android:id="@+id/homeWorkAssignment"
+        android:id="@+id/HomeWorkAssignment"
         android:name="com.allnetworks.allnetworks_school_management_system.views.student.assignment.AssignmentFragment"
         android:label="HomeWorkAssignment"
-        tools:layout="@layout/fragment_home_work_assignment"
-        />
+        tools:layout="@layout/fragment_home_work_assignment" />
 
     <fragment
         android:id="@+id/AttendanceFragment"
         android:name="com.allnetworks.allnetworks_school_management_system.views.student.attendance.AttendanceFragment"
         android:label="AttendanceFragment"
-        tools:layout="@layout/fragment_attendance"
-        />
+        tools:layout="@layout/fragment_attendance" />
 
     <fragment
         android:id="@+id/ResultGradesFragment"
         android:name="com.allnetworks.allnetworks_school_management_system.views.student.resultGrades.ResultGradesFragment"
         android:label="ResultGradesFragment"
-        tools:layout="@layout/fragment_result_grades"
-        />
+        tools:layout="@layout/fragment_result_grades" />
+
+    <fragment
+        android:id="@+id/MyClasses"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherTimeTable.TeacherClasses"
+        android:label="MyClasses"
+        tools:layout="@layout/fragment_teacher_classes" />
+
+    <fragment
+        android:id="@+id/AllAssignment"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherAssignment.allAssignment.AllAssignment"
+        android:label="AllAssignment"
+        tools:layout="@layout/fragment_all_assignment" >
+
+        <action
+            android:id="@+id/action_allAssignment_to_newAssignment"
+            app:destination="@id/NewAssignment"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/NewAssignment"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherAssignment.createNewAssignment.NewAssignment"
+        android:label="NewAssignment"
+        tools:layout="@layout/fragment_new_assignment" />
+
 
 </navigation>

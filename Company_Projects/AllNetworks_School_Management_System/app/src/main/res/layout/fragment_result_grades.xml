@@ -1,77 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".views.student.resultGrades.ResultGradesFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- toolbar -->
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.allnetworks.allnetworks_school_management_system.views.student.resultGrades.ResultGradesVM" />
+
+    </data>
+
     <LinearLayout
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:id="@+id/layout_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="22dp"
-            android:background="@drawable/bg_circle"
-            android:backgroundTint="@color/white"
-            android:elevation="5dp"
-            android:gravity="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_back" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/inter_semi_bold"
-            android:gravity="center"
-            android:text="Grades"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="25dp"
-            android:contentDescription="Tasks"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/info_2" />
-    </LinearLayout>
-
-    <HorizontalScrollView
+        android:background="@color/background_color"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:scrollbars="none">
+        android:orientation="vertical"
+        tools:context=".views.student.resultGrades.ResultGradesFragment">
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+        <!-- toolbar -->
+        <LinearLayout
+            android:background="@color/background_color"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TableLayout
-                android:id="@+id/tableLayout"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:onClick="@{viewModel::onClick}"
+                android:id="@+id/layout_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="22dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/white"
+                android:elevation="5dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_back" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:stretchColumns="*" />
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center"
+                android:text="Grades"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-        </androidx.core.widget.NestedScrollView>
-    </HorizontalScrollView>
-</LinearLayout>
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:contentDescription="Tasks"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/info_2" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:scrollbars="none">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <TableLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:stretchColumns="*" />
+
+            </androidx.core.widget.NestedScrollView>
+        </HorizontalScrollView>
+    </LinearLayout>
+</layout>

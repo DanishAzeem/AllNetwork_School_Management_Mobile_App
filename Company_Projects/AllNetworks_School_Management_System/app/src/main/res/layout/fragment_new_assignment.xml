@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherAssignment.createNewAssignment.NewAssignmentVM" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/warm_off_white"
+        android:orientation="vertical">
+
+        <!-- toolbar -->
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/layout_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="22dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/white"
+                android:elevation="5dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{viewModel::onClick}"
+                    app:srcCompat="@drawable/ic_back" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center"
+                android:text="New Assignment"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:contentDescription="Tasks"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/info_2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TV14dpInter"
+                android:text="Title" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_rectangle_edittext"
+                app:boxStrokeWidth="0dp"
+                android:focusable="false"
+                app:boxBackgroundMode="none"
+                app:hintTextAppearance="@style/TextInputHintSize"
+                app:hintEnabled="false">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:hint="@string/chapter_6_practice_problems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/textColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                style="@style/TV14dpInter"
+                android:text="Subject" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_spinner"
+                style="@style/MaterialTilOutlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select State"
+                app:endIconDrawable="@drawable/ic_arrow_down_filled"
+                app:endIconMode="custom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/spinner_state"
+                    style="@style/TextInputET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:imeOptions="actionNext"
+                    android:maxLength="40"
+                    android:text="@{viewModel.itemState}"
+                    android:onClick="@{viewModel::onClick}"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                app:setRecyclerAdapter="@{viewModel.adapterState}"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="12dp"-->
+<!--                android:background="@drawable/bg_10_corners"-->
+<!--                android:backgroundTint="#EBEBEB"-->
+<!--                android:paddingBottom="5dp"-->
+<!--                android:visibility="@{viewModel.isDropDownState?View.VISIBLE : View.GONE}"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                tools:itemCount="3"-->
+<!--                tools:listitem="@layout/item_store_type" />-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         tools:listitem="@layout/item_assignments"
         tools:itemCount="8"
+        android:layout_margin="12dp"
         />
 
 

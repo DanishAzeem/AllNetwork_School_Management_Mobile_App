@@ -6,16 +6,12 @@ plugins {
 
 android {
     namespace = "com.allnetworks.allnetworks_school_management_system"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.allnetworks.allnetworks_school_management_system"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -39,6 +35,9 @@ android {
         viewBinding = true
         dataBinding = true
     }
+//    kotlinOptions {
+//        freeCompilerArgs = listOf("-XXLanguage:+PropertyParamAnnotationDefaultTargetMode")
+//    }
 }
 
 dependencies {
@@ -53,6 +52,6 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.lottie)
-    implementation("com.google.dagger:hilt-android:2.57.1")
-//    implementation("com.google.dagger:hilt-compiler:2.57.1")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 }

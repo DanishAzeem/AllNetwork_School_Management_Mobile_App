@@ -1,19 +1,479 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <fragment
-        android:id="@+id/fragmentMain"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <data>
+
+        <variable
+            name="vm"
+            type="com.allnetworks.allnetworks_school_management_system.MainVM" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph" />
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Bottom navigation-->
+        <!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+        <!--            android:id="@+id/bottomNavigationView"-->
+        <!--            style="@style/Widget.Material3.BottomNavigationView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:background="@drawable/bg_rounded"-->
+        <!--            app:labelVisibilityMode="labeled"-->
+        <!--            app:menu="@menu/bottom_nav_menu" />-->
+
+        <!-- navigation drawer-->
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawerLayout"
+            style="@style/Widget.Material3.DrawerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            tools:openDrawer="start">
+            <!--            android:layout_above="@id/bottomNavigationView"-->
+
+
+            <fragment
+                android:id="@+id/fragmentMain"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginEnd="-65dp"
+                android:focusable="true"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:id="@+id/halfDrawer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <FrameLayout
+                            android:layout_width="228dp"
+                            android:layout_height="match_parent"
+                            android:elevation="9dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="30dp"
+                                android:background="@color/white">
+
+
+                                <!-- side navigation inner section -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:orientation="vertical"
+                                    android:paddingHorizontal="24dp"
+                                    android:paddingVertical="20dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center">
+
+                                            <ImageView
+                                                android:id="@+id/siv_image"
+                                                android:layout_width="35dp"
+                                                android:layout_height="35dp"
+                                                android:layout_marginEnd="8dp"
+                                                android:contentDescription="@string/profile"
+                                                android:src="@drawable/placeholder_image" />
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:gravity="center_vertical"
+                                                android:orientation="vertical">
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:ellipsize="end"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:maxLines="1"
+                                                    android:text="Ali Khan"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="13sp" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="2dp"
+                                                    android:text="Student"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="8sp"
+                                                    tools:ignore="SmallSp"
+                                                    tools:text="Delivery Rider" />
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginVertical="10dp" />
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginTop="8dp"
+                                        android:background="@color/gray" />
+
+                                    <ScrollView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scrollbars="none">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:id="@+id/lyHome"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/home"
+                                                    android:src="@drawable/ic_home"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/home"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyTimeTable"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/time_table"
+                                                    android:src="@drawable/ic_timetable"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/time_table"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyAssignment"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/assignment"
+                                                    android:src="@drawable/ic_assignment"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/assignment"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyGrades"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/grades"
+                                                    android:src="@drawable/ic_grades"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/grades"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyAttendance"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/attendance"
+                                                    android:src="@drawable/ic_attendance"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/attendance"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyMyClasses"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/time_table"
+                                                    android:src="@drawable/ic_myclasses"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/my_classes"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyAllAssignment"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="All Assignments"
+                                                    android:src="@drawable/ic_teacher_assignment"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="Assignments"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyTermsAndConditions"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/terms_and_conditions"
+                                                    android:src="@drawable/info"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/terms_and_conditions"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyPrivacyPolicy"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/privacy_policy"
+                                                    android:src="@drawable/info"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/privacy_policy"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyAppInfo"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/app_name"
+                                                    android:src="@drawable/info"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/version_1_0_0"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp"
+                                                    tools:text="Version 1.0.0" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyLogout"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="48dp"
+                                                android:layout_marginBottom="150dp"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/logout"
+                                                    android:src="@drawable/ic_logout" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/logout"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </ScrollView>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                    </FrameLayout>
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+
+    </RelativeLayout>
+
+</layout>
