@@ -2,12 +2,16 @@ package com.allnetworks.allnetworks_school_management_system.views.teacher.teach
 
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import com.allnetworks.allnetworks_school_management_system.R
 import com.allnetworks.allnetworks_school_management_system.databinding.FragmentNewAssignmentBinding
 import com.allnetworks.allnetworks_school_management_system.utils.AppController
+import com.allnetworks.allnetworks_school_management_system.utils.dpToPx
 import com.allnetworks.allnetworks_school_management_system.views.student.timeTable.TimeTableVM
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.getValue
@@ -16,6 +20,8 @@ class NewAssignment : Fragment(R.layout.fragment_new_assignment) {
     private lateinit var binding: FragmentNewAssignmentBinding
 
     private val viewModel by viewModels<NewAssignmentVM>()
+    val classes = listOf("8B", "9A", "7C")
+    var selectedChip: TextView? = null
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -23,6 +29,30 @@ class NewAssignment : Fragment(R.layout.fragment_new_assignment) {
         binding = FragmentNewAssignmentBinding.bind(view)
         AppController.Companion.navListener?.isLockDrawer(true)
         binding.viewModel = viewModel
+
+        classes.forEach { label ->
+            val chip = TextView(context).apply {
+                text = label
+                textSize = 14f
+                setPadding(40, 18, 40, 18)
+                setTextColor(ContextCompat.getColor(context, R.color.textColor))
+                background = ContextCompat.getDrawable(context, R.drawable.bg_chip_unselected)
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ).apply { marginEnd = 8.dpToPx() }
+
+                setOnClickListener {
+                    selectedChip?.background = ContextCompat.getDrawable(context, R.drawable.bg_chip_unselected)
+                    selectedChip?.setTextColor(ContextCompat.getColor(context, R.color.textColor))
+                    background = ContextCompat.getDrawable(context, R.drawable.bg_chip_selected)
+                    setTextColor(ContextCompat.getColor(context, R.color.white))
+                    selectedChip = this
+                }
+            }
+            binding.chipGroup.addView(chip)
+            if (label == classes.first()) chip.performClick()
+        }
 
     }
 }
