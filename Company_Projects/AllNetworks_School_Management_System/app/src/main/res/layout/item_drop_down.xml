@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="model"
             type="com.allnetworks.allnetworks_school_management_system.models.DummyModel" />
@@ -14,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#EBEBEB">
+
 
         <View
             android:layout_width="match_parent"
@@ -27,7 +30,6 @@
             android:id="@+id/llCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{(v)->model.onItemClick.onClick(v, model.adapterPosition, model)}"
             android:paddingVertical="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +60,7 @@
                 tools:src="@drawable/ic_checked" />
 
         </RelativeLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

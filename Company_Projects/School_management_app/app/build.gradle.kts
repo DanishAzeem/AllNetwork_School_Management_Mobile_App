@@ -1,20 +1,22 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
 }
 
 android {
-    namespace = "com.allnetworks.allnetworks_school_management_system"
-    compileSdk = 34
+    namespace = "com.allnetworks.school_management_app"
+    compileSdk {
+        version = release(36) {
+            minorApiLevel = 1
+        }
+    }
 
     defaultConfig {
-        applicationId = "com.allnetworks.allnetworks_school_management_system"
+        applicationId = "com.allnetworks.school_management_app"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -27,19 +29,9 @@ android {
             )
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-
-    buildFeatures {
-        viewBinding = true
-        dataBinding = true
     }
 }
 
@@ -49,13 +41,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
-    implementation(libs.lottie)
-
-    implementation("com.google.dagger:hilt-android:2.57.1")
-    ksp("com.google.dagger:hilt-android-compiler:2.57.1")
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

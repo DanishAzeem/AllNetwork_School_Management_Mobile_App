@@ -10,6 +10,7 @@
         <variable
             name="model"
             type="com.allnetworks.allnetworks_school_management_system.models.ContentData" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,7 +30,6 @@
             android:id="@+id/llCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{(v)->model.onItemClick.onClick(v, model.adapterPosition, model)}"
             android:paddingVertical="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

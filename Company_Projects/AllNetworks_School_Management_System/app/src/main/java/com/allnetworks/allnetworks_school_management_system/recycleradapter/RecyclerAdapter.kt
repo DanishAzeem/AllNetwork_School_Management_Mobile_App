@@ -7,6 +7,8 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import com.allnetworks.allnetworks_school_management_system.BR
+
 //import com.allnetworks.allnetworks_school_management_system.BR
 
 class RecyclerAdapter<T : AbstractModel>(
@@ -24,8 +26,8 @@ class RecyclerAdapter<T : AbstractModel>(
     class VH<T : AbstractModel>(val binding: ViewDataBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(model: T) {
-//            binding.setVariable(BR.model, model)
-//            binding.executePendingBindings()
+            binding.setVariable(BR.model, model)
+            binding.executePendingBindings()
         }
     }
 
@@ -46,8 +48,8 @@ class RecyclerAdapter<T : AbstractModel>(
         model.length = items.size
         model.viewHolder = holder
         model.isLastPosition = position == items.size - 1
-//        holder.binding.setVariable(BR.model, model)  // BR used here
-//        holder.binding.executePendingBindings()
+        holder.binding.setVariable(BR.model, model)  // BR used here
+        holder.binding.executePendingBindings()
         if (isAnimation) setAnimation(holder, position)
     }
 

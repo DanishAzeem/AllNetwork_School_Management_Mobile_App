@@ -1,5 +1,5 @@
 [versions]
-agp = "9.1.0"
+agp = "8.4.2"
 coreKtx = "1.10.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -11,11 +11,11 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 materialVersion = "1.11.0"
 navigationFragmentKtx = "2.9.7"
-ksp = "1.9.24-1.0.20"
+ksp = "1.9.23-1.0.20"      # ← First part must match kotlin version exactly
 navigationFragmentKtxVersion = "2.7.7"
 navigationUiKtx = "2.7.7"
-hilt = "2.59.2"
-kotlin = "1.9.24"
+hilt = "2.57.1"
+kotlin = "2.1.21"          # ← Must match KSP prefix below
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
