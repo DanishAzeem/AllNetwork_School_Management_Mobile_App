@@ -1,74 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/background_color"
-    tools:context=".views.student.attendance.AttendanceFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-    <!-- toolbar -->
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherAssignment.editAssignment.EditAssignmentVM" />
+
+    </data>
+
     <LinearLayout
-        android:background="@color/background_color"
-        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/warm_off_white"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/layout_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="22dp"
-            android:background="@drawable/bg_circle"
-            android:backgroundTint="@color/white"
-            android:elevation="5dp"
-            android:gravity="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_back" />
-
-        </LinearLayout>
-
-        <TextView
-            android:textColor="@color/black"
-            android:layout_width="0dp"
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/inter_semi_bold"
-            android:gravity="center"
-            android:text="Attendance"
-            android:textSize="18sp" />
+            android:scrollIndicators="none">
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="25dp"
-            android:contentDescription="Tasks"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/info_2" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <!-- toolbar -->
+                <LinearLayout
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/layout_back"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="22dp"
+                        android:background="@drawable/bg_circle"
+                        android:backgroundTint="@color/white"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{viewModel::onClick}"
+                            app:srcCompat="@drawable/ic_back" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_semi_bold"
+                        android:gravity="center"
+                        android:text="Edit Assignment"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="25dp"
+                        android:contentDescription="Tasks"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/info_2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TV14dpInterMedium"
+                        android:text="Title" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MaterialTil"
+                        android:background="@drawable/ic_rectangle_edittext"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:hint="@string/chapter_6_practice_problems"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColor="@color/textColor" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        style="@style/TV14dpInterMedium"
+                        android:layout_marginTop="12dp"
+                        android:text="Due date" />
+
+                    <TextView
+                        android:id="@+id/tv_dueDate"
+                        style="@style/MaterialTil"
+                        android:layout_height="55dp"
+                        android:background="@drawable/ic_rectangle_edittext"
+                        android:gravity="center_vertical"
+                        android:paddingStart="17dp"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        style="@style/TV14dpInterMedium"
+                        android:layout_marginTop="12dp"
+                        android:text="Extend due date" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MaterialTil"
+                        android:background="@drawable/ic_rectangle_edittext"
+                        app:endIconDrawable="@drawable/ic_calendar"
+                        app:endIconMode="custom"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_extendDueDate"
+                            style="@style/TextInputET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="Enter Date"
+                            android:onClick="@{viewModel::onClick}"
+                            android:text="@={viewModel.dueDate}"
+                            tools:text="11/11/2000" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        style="@style/TV14dpInterMedium"
+                        android:layout_marginTop="12dp"
+                        android:text="Total marks" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MaterialTil"
+                        android:background="@drawable/ic_rectangle_edittext"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_totalMarks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColor="@color/textColor" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        style="@style/TV14dpInterMedium"
+                        android:layout_marginTop="12dp"
+                        android:text="Description" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/MaterialTil"
+                        android:layout_height="80dp"
+                        android:background="@drawable/ic_rectangle_edittext"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:gravity="top|start"
+                            android:hint="Add instructions or note.."
+                            android:inputType="text|textMultiLine"
+                            android:maxLength="300"
+                            android:paddingTop="8dp"
+                            android:singleLine="false"
+                            android:textColor="@color/textColor" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/publishAssignmentBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:onClick="@{viewModel::onClick}"
+                        android:text="Save Changes"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:backgroundTint="@color/app_primary"
+                        app:cornerRadius="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
 
     </LinearLayout>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="5dp"
-        android:id="@+id/rvAttendance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/item_attendance_list"
-        tools:itemCount="8"
-        />
-
-
-</LinearLayout>
+</layout>

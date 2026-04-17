@@ -8,7 +8,9 @@ import androidx.lifecycle.ViewModel
 import com.allnetworks.allnetworks_school_management_system.R
 import com.allnetworks.allnetworks_school_management_system.models.DummyModel
 import com.allnetworks.allnetworks_school_management_system.recycleradapter.RecyclerAdapter
+import com.allnetworks.allnetworks_school_management_system.utils.DateTimeUtil
 import com.allnetworks.allnetworks_school_management_system.utils.navigateBack
+import com.allnetworks.allnetworks_school_management_system.utils.navigateWithId
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 
@@ -21,6 +23,9 @@ class NewAssignmentVM @Inject constructor() : ViewModel() {
     var itemState: ObservableField<String> = ObservableField("")
     var isDropDownState: ObservableBoolean = ObservableBoolean(false)
     val adapterState = RecyclerAdapter<DummyModel>(R.layout.item_store_type)
+
+    var dueDate: ObservableField<String> = ObservableField("")
+
 
     init {
         dummyvalues()
@@ -69,13 +74,22 @@ class NewAssignmentVM @Inject constructor() : ViewModel() {
         mLastClickTime = SystemClock.elapsedRealtime()
 
         when (view.id) {
-            R.id.layout_back -> {
+            R.id.ivBack -> {
                 navigateBack()
             }
-
-            R.id.spinner_state -> {
-                isDropDownState.set(!isDropDownState.get())
+            R.id.publishAssignmentBtn -> {
+                view.navigateWithId(R.id.action_newAssignment_to_allAssignment)
             }
+
+            R.id.et_dueDate -> {
+                DateTimeUtil.showDatePicker(allowPastDates = false, allowFutureDates = true) {
+                    dueDate.set(it)
+                }
+            }
+
+//            R.id.spinner_state -> {
+//                isDropDownState.set(!isDropDownState.get())
+//            }
         }
     }
 }

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.allnetworks.allnetworks_school_management_system.R
 import com.allnetworks.allnetworks_school_management_system.databinding.ItemTeacherAllAssignmentBinding
 import com.allnetworks.allnetworks_school_management_system.models.testing.AllAssignmentModel
+import com.allnetworks.allnetworks_school_management_system.utils.AppController
 
 class AllAssignmentAdapter(
     private val dataList: ArrayList<AllAssignmentModel> = ArrayList(),
@@ -47,12 +48,17 @@ class AllAssignmentAdapter(
             lyBorder.backgroundTintList = ColorStateList.valueOf(colors)
             totalStudentsProgressBar.setIndicatorColor(colors)
         }
+        holder.binding.root.setOnClickListener {
+            onItemClick?.invoke("clicked")
+        }
 
     }
 
     override fun getItemCount(): Int {
         return dataList.size
     }
+
+    var onItemClick: ((String) -> Unit)? = null
 
     private val colors = listOf(
         R.color.green,

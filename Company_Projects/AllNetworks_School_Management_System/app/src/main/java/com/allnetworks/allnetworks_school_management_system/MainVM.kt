@@ -27,6 +27,7 @@ class MainVM @Inject constructor(
             R.id.lyTimeTable -> navController.navigate(R.id.TimeTableFragment)
             R.id.lyAttendance -> navController.navigate(R.id.AttendanceFragment)
             R.id.lyMyClasses -> navController.navigate(R.id.MyClasses)
+//            R.id.lyAllAssignment -> navController.navigate(R.id.AllSubmissions)
             R.id.lyAllAssignment -> navController.navigate(R.id.AllAssignment)
 
         }

@@ -80,20 +80,76 @@
         android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherAssignment.allAssignment.AllAssignment"
         android:label="AllAssignment"
         tools:layout="@layout/fragment_all_assignment" >
-
         <action
             android:id="@+id/action_allAssignment_to_newAssignment"
             app:destination="@id/NewAssignment"
             app:enterAnim="@anim/zoom_in_zoom_out"
             app:exitAnim="@anim/exit" />
-
+        <action
+            android:id="@+id/action_allAssignment_to_viewAssignment"
+            app:destination="@id/ViewAssignment"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit" />
     </fragment>
 
     <fragment
         android:id="@+id/NewAssignment"
         android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherAssignment.createNewAssignment.NewAssignment"
         android:label="NewAssignment"
-        tools:layout="@layout/fragment_new_assignment" />
+        tools:layout="@layout/fragment_new_assignment">
+        <action
+            android:id="@+id/action_newAssignment_to_allAssignment"
+            app:destination="@id/AllAssignment"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/EditAssignment"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherAssignment.editAssignment.EditAssignment"
+        android:label="EditAssignment"
+        tools:layout="@layout/fragment_view_assignment" >
+        <action
+            android:id="@+id/action_editAssignment_to_allAssignment"
+            app:destination="@id/AllAssignment"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AllSubmissions"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherAssignment.submissions.AllSubmissionsFragment"
+        android:label="AllSubmissions"
+        tools:layout="@layout/fragment_all_submissions">
+        <action
+            android:id="@+id/action_allSubmission_to_gradeSubmission"
+            app:destination="@id/GradeSubmission"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ViewAssignment"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherAssignment.viewAssignment.ViewAssignment"
+        android:label="ViewAssignment"
+        tools:layout="@layout/fragment_view_assignment">
+        <action
+            android:id="@+id/action_viewAssignment_to_editAssignment"
+            app:destination="@id/EditAssignment"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_viewAssignment_to_allSubmissions"
+            app:destination="@id/AllSubmissions"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/GradeSubmission"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherAssignment.submissions.gradeSubmission.GradeSubmission"
+        android:label="GradeSubmission"
+        tools:layout="@layout/fragment_grade_submission" />
 
 
 </navigation>

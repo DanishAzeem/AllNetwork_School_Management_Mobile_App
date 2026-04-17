@@ -28,5 +28,17 @@
     <string name="create">create</string>
     <string name="dot">•</string>
     <string name="chapter_6_practice_problems">Chapter 6 - Practice Problems</string>
+    <string name="due_date">Due Date</string>
+    <string name="total_marks">Total Marks</string>
+    <string name="marks">Marks</string>
+    <string name="solve_all_problems_from_exercise_5_3_and_5_4_show_full_working_for_each_step">Solve all problems from Exercise 5.3 and 5.4. Show full working for each step.</string>
+    <string name="_0_100_submitted">0 / 100 submitted</string>
+    <string name="quick_actions">Quick actions</string>
+    <string name="view_submissions">View submissions</string>
+    <string name="delete">Delete</string>
+    <string name="submissions">Submissions</string>
+    <string name="submitted">Submitted</string>
+    <string name="graded">Graded</string>
+    <string name="download_file">download file</string>
 
 </resources>

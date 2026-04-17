@@ -86,7 +86,7 @@
                                 android:fontFamily="@font/inter_medium"
                                 android:paddingHorizontal="6dp"
                                 android:text="2 more day"
-                                android:textColor="@color/light_black_color"
+                                android:textColor="@color/faded_light_black_color"
                                 android:textSize="12sp"
                                 tool:text="2 more day" />
 

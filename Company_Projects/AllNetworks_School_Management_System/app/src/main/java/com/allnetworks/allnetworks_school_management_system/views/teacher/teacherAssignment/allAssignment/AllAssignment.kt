@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.allnetworks.allnetworks_school_management_system.R
 import com.allnetworks.allnetworks_school_management_system.databinding.FragmentAllAssignmentBinding
@@ -74,7 +75,11 @@ class AllAssignment : Fragment(R.layout.fragment_all_assignment) {
             adapter = this@AllAssignment.adapter
         }
 
-
+        adapter.onItemClick = { btnState ->
+            if(btnState == "clicked") {
+                findNavController().navigate(R.id.action_allAssignment_to_viewAssignment)
+            }
+        }
     }
 
 }

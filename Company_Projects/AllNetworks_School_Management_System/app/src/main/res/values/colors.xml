@@ -14,7 +14,8 @@
     <color name="timetablebg">#e0d1d1</color>
     <color name="transparent_red">#EE706E</color>
     <color name="light_black">#3B3B3B</color>
-    <color name="light_black_color">#CC3C3C3C</color>
+    <color name="faded_light_black_color">#CC3C3C3C</color>
+    <color name="light_gray">#CC6E6E6E</color>
     <color name="textColor">#3C3C3C</color>
     <color name="red">#FF0000</color>
     <color name="_3b3b3b">#3B3B3B</color>
@@ -27,15 +28,40 @@
     <color name="warm_off_white">#FAF7F2</color>
     <color name="stroke_color">#604F4F4F</color>
     <color name="_838383">#838383</color>
-
-
-
-
-
+    <color name="purple">#E4E1F3</color>
+    <color name="purple_pair">#4B3FBF</color>
+    <color name="green2">#DCEEE8</color>
+    <color name="green2_pair">#1E6F5C</color>
+    <color name="Beige">#F1E2C9</color>
+    <color name="Brown">#B3261E</color>
 
 
     <color name="text_primary">#1A1A1A</color>
     <color name="text_secondary">#888888</color>
     <color name="border_color">#E0E0E0</color>
+    <!-- Pair 1: Soft Purple -->
+    <color name="purple_bg">#EDE9FE</color>
+    <color name="purple_text">#4B3FBF</color>
+    <!-- Pair 2: Mint Green -->
+    <color name="green_bg">#D1FAE5</color>
+    <color name="green_text">#065F46</color>
+    <!-- Pair 3: Peach -->
+    <color name="peach_bg">#FFE4D6</color>
+    <color name="peach_text">#9A3412</color>
+    <!-- Pair 4: Sky Blue -->
+    <color name="blue_bg">#DBEAFE</color>
+    <color name="blue_text">#1E40AF</color>
+    <!-- Pair 5: Rose Pink -->
+    <color name="pink_bg">#FCE7F3</color>
+    <color name="pink_text">#9D174D</color>
+    <!-- Pair 6: Amber Yellow -->
+    <color name="amber_bg">#FEF3C7</color>
+    <color name="amber_text">#92400E</color>
+    <!-- Pair 7: Teal -->
+    <color name="teal_bg">#CCFBF1</color>
+    <color name="teal_text">#0F5343</color>
+    <!-- Pair 8: Lavender -->
+    <color name="lavender_bg">#F3E8FF</color>
+    <color name="lavender_text">#6B21A8</color>
 
 </resources>
