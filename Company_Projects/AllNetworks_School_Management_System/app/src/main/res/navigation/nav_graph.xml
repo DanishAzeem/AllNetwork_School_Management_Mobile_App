@@ -151,5 +151,11 @@
         android:label="GradeSubmission"
         tools:layout="@layout/fragment_grade_submission" />
 
+    <fragment
+        android:id="@+id/SubjectsAttendance"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherMarkAttendance.SubjectsAttendance"
+        android:label="SubjectsAttendance"
+        tools:layout="@layout/fragment_subjects_attendance" />
+
 
 </navigation>

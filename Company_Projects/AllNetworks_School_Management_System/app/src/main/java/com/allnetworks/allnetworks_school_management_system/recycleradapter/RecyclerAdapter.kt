@@ -7,10 +7,12 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-//import com.allnetworks.allnetworks_school_management_system.BR
 
 class RecyclerAdapter<T : AbstractModel>(
-    @LayoutRes val layoutId: Int, private val isAnimation: Boolean = false
+    @LayoutRes val layoutId: Int,
+    private val isAnimation: Boolean = false,
+    val variableId: Int,  // Pass BR.model here
+
 ) : RecyclerView.Adapter<RecyclerAdapter.VH<T>>() {
 
     private val items by lazy { mutableListOf<T>() }
@@ -23,9 +25,10 @@ class RecyclerAdapter<T : AbstractModel>(
 
     class VH<T : AbstractModel>(val binding: ViewDataBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(model: T) {
+        fun bind(model: T, variableId: Int) {
+            binding.setVariable(variableId, model)
 //            binding.setVariable(BR.model, model)
-//            binding.executePendingBindings()
+            binding.executePendingBindings()
         }
     }
 
@@ -46,9 +49,11 @@ class RecyclerAdapter<T : AbstractModel>(
         model.length = items.size
         model.viewHolder = holder
         model.isLastPosition = position == items.size - 1
+
+        holder.bind(model, variableId)
 //        holder.binding.setVariable(BR.model, model)  // BR used here
 //        holder.binding.executePendingBindings()
-        if (isAnimation) setAnimation(holder, position)
+//        if (isAnimation) setAnimation(holder, position)
     }
 
     override fun getItemCount(): Int {

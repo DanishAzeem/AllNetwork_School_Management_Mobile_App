@@ -146,9 +146,9 @@
                         android:paddingBottom="5dp"
                         android:visibility="@{viewModel.isDropDownState?View.VISIBLE : View.GONE}"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:setRecyclerAdapter="@{viewModel.adapterState}"
+                        setRecyclerAdapter="@{viewModel.adapterState}"
                         tools:itemCount="3"
-                        tools:listitem="@layout/item_store_type" />
+                        tools:listitem="@layout/item_drop_down" />
 
                     <TextView
                         style="@style/TV14dpInterMedium"

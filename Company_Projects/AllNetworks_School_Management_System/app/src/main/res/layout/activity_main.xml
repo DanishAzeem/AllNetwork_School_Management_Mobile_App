@@ -348,6 +348,32 @@
                                             </LinearLayout>
 
                                             <LinearLayout
+                                                android:id="@+id/lySubjectsAttendance"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="Subject Attendance"
+                                                    android:src="@drawable/ic_subjects_attendance"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="Attendance"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
                                                 android:id="@+id/lyTermsAndConditions"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"

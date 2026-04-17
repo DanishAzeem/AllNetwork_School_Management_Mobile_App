@@ -29,6 +29,8 @@ class MainVM @Inject constructor(
             R.id.lyMyClasses -> navController.navigate(R.id.MyClasses)
 //            R.id.lyAllAssignment -> navController.navigate(R.id.AllSubmissions)
             R.id.lyAllAssignment -> navController.navigate(R.id.AllAssignment)
+            R.id.lySubjectsAttendance -> navController.navigate(R.id.SubjectsAttendance)
+
 
         }
 
