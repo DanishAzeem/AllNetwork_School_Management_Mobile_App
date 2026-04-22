@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="com.allnetworks.allnetworks_school_management_system.utils.AppController" />
+        <import type="android.view.View" />
 
         <variable
             name="vm"
@@ -192,184 +194,200 @@
                                             </LinearLayout>
 
                                             <LinearLayout
-                                                android:id="@+id/lyTimeTable"
+                                                android:id="@+id/lyStudent"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
-                                                android:gravity="center_vertical"
-                                                android:onClick="@{vm::onClick}"
-                                                android:paddingVertical="12dp">
+                                                android:orientation="vertical">
 
-                                                <ImageView
-                                                    android:layout_width="18dp"
-                                                    android:layout_height="18dp"
-                                                    android:contentDescription="@string/time_table"
-                                                    android:src="@drawable/ic_timetable"
-                                                    app:tint="@color/_3b3b3b" />
-
-                                                <TextView
+                                                <LinearLayout
+                                                    android:id="@+id/lyTimeTable"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:layout_marginStart="24dp"
-                                                    android:fontFamily="@font/inter_medium"
-                                                    android:text="@string/time_table"
-                                                    android:textColor="@color/_3b3b3b"
-                                                    android:textSize="14sp" />
+                                                    android:gravity="center_vertical"
+                                                    android:onClick="@{vm::onClick}"
+                                                    android:paddingVertical="12dp">
+
+                                                    <ImageView
+                                                        android:layout_width="18dp"
+                                                        android:layout_height="18dp"
+                                                        android:contentDescription="@string/time_table"
+                                                        android:src="@drawable/ic_timetable"
+                                                        app:tint="@color/_3b3b3b" />
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="24dp"
+                                                        android:fontFamily="@font/inter_medium"
+                                                        android:text="@string/time_table"
+                                                        android:textColor="@color/_3b3b3b"
+                                                        android:textSize="14sp" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:id="@+id/lyAssignment"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center_vertical"
+                                                    android:onClick="@{vm::onClick}"
+                                                    android:paddingVertical="12dp">
+
+                                                    <ImageView
+                                                        android:layout_width="18dp"
+                                                        android:layout_height="18dp"
+                                                        android:contentDescription="@string/assignment"
+                                                        android:src="@drawable/ic_assignment"
+                                                        app:tint="@color/_3b3b3b" />
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="24dp"
+                                                        android:fontFamily="@font/inter_medium"
+                                                        android:text="@string/assignment"
+                                                        android:textColor="@color/_3b3b3b"
+                                                        android:textSize="14sp" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:id="@+id/lyGrades"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center_vertical"
+                                                    android:onClick="@{vm::onClick}"
+                                                    android:paddingVertical="12dp">
+
+                                                    <ImageView
+                                                        android:layout_width="18dp"
+                                                        android:layout_height="18dp"
+                                                        android:contentDescription="@string/grades"
+                                                        android:src="@drawable/ic_grades"
+                                                        app:tint="@color/_3b3b3b" />
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="24dp"
+                                                        android:fontFamily="@font/inter_medium"
+                                                        android:text="@string/grades"
+                                                        android:textColor="@color/_3b3b3b"
+                                                        android:textSize="14sp" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:id="@+id/lyAttendance"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center_vertical"
+                                                    android:onClick="@{vm::onClick}"
+                                                    android:paddingVertical="12dp">
+
+                                                    <ImageView
+                                                        android:layout_width="18dp"
+                                                        android:layout_height="18dp"
+                                                        android:contentDescription="@string/attendance"
+                                                        android:src="@drawable/ic_attendance"
+                                                        app:tint="@color/_3b3b3b" />
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="24dp"
+                                                        android:fontFamily="@font/inter_medium"
+                                                        android:text="@string/attendance"
+                                                        android:textColor="@color/_3b3b3b"
+                                                        android:textSize="14sp" />
+
+                                                </LinearLayout>
 
                                             </LinearLayout>
 
                                             <LinearLayout
-                                                android:id="@+id/lyAssignment"
+                                                android:id="@+id/lyTeacher"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
-                                                android:gravity="center_vertical"
-                                                android:onClick="@{vm::onClick}"
-                                                android:paddingVertical="12dp">
+                                                android:orientation="vertical">
 
-                                                <ImageView
-                                                    android:layout_width="18dp"
-                                                    android:layout_height="18dp"
-                                                    android:contentDescription="@string/assignment"
-                                                    android:src="@drawable/ic_assignment"
-                                                    app:tint="@color/_3b3b3b" />
-
-                                                <TextView
+                                                <LinearLayout
+                                                    android:id="@+id/lyMyClasses"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:layout_marginStart="24dp"
-                                                    android:fontFamily="@font/inter_medium"
-                                                    android:text="@string/assignment"
-                                                    android:textColor="@color/_3b3b3b"
-                                                    android:textSize="14sp" />
+                                                    android:gravity="center_vertical"
+                                                    android:onClick="@{vm::onClick}"
+                                                    android:paddingVertical="12dp">
 
-                                            </LinearLayout>
+                                                    <ImageView
+                                                        android:layout_width="18dp"
+                                                        android:layout_height="18dp"
+                                                        android:contentDescription="@string/time_table"
+                                                        android:src="@drawable/ic_myclasses"
+                                                        app:tint="@color/_3b3b3b" />
 
-                                            <LinearLayout
-                                                android:id="@+id/lyGrades"
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:gravity="center_vertical"
-                                                android:onClick="@{vm::onClick}"
-                                                android:paddingVertical="12dp">
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="24dp"
+                                                        android:fontFamily="@font/inter_medium"
+                                                        android:text="@string/my_classes"
+                                                        android:textColor="@color/_3b3b3b"
+                                                        android:textSize="14sp" />
 
-                                                <ImageView
-                                                    android:layout_width="18dp"
-                                                    android:layout_height="18dp"
-                                                    android:contentDescription="@string/grades"
-                                                    android:src="@drawable/ic_grades"
-                                                    app:tint="@color/_3b3b3b" />
+                                                </LinearLayout>
 
-                                                <TextView
+                                                <LinearLayout
+                                                    android:id="@+id/lyAllAssignment"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:layout_marginStart="24dp"
-                                                    android:fontFamily="@font/inter_medium"
-                                                    android:text="@string/grades"
-                                                    android:textColor="@color/_3b3b3b"
-                                                    android:textSize="14sp" />
+                                                    android:gravity="center_vertical"
+                                                    android:onClick="@{vm::onClick}"
+                                                    android:paddingVertical="12dp">
 
-                                            </LinearLayout>
+                                                    <ImageView
+                                                        android:layout_width="18dp"
+                                                        android:layout_height="18dp"
+                                                        android:contentDescription="All Assignments"
+                                                        android:src="@drawable/ic_teacher_assignment"
+                                                        app:tint="@color/_3b3b3b" />
 
-                                            <LinearLayout
-                                                android:id="@+id/lyAttendance"
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:gravity="center_vertical"
-                                                android:onClick="@{vm::onClick}"
-                                                android:paddingVertical="12dp">
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="24dp"
+                                                        android:fontFamily="@font/inter_medium"
+                                                        android:text="Assignments"
+                                                        android:textColor="@color/_3b3b3b"
+                                                        android:textSize="14sp" />
 
-                                                <ImageView
-                                                    android:layout_width="18dp"
-                                                    android:layout_height="18dp"
-                                                    android:contentDescription="@string/attendance"
-                                                    android:src="@drawable/ic_attendance"
-                                                    app:tint="@color/_3b3b3b" />
+                                                </LinearLayout>
 
-                                                <TextView
+                                                <LinearLayout
+                                                    android:id="@+id/lySubjectsAttendance"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:layout_marginStart="24dp"
-                                                    android:fontFamily="@font/inter_medium"
-                                                    android:text="@string/attendance"
-                                                    android:textColor="@color/_3b3b3b"
-                                                    android:textSize="14sp" />
+                                                    android:gravity="center_vertical"
+                                                    android:onClick="@{vm::onClick}"
+                                                    android:paddingVertical="12dp">
 
-                                            </LinearLayout>
+                                                    <ImageView
+                                                        android:layout_width="18dp"
+                                                        android:layout_height="18dp"
+                                                        android:contentDescription="Subject Attendance"
+                                                        android:src="@drawable/ic_subjects_attendance"
+                                                        app:tint="@color/_3b3b3b" />
 
-                                            <LinearLayout
-                                                android:id="@+id/lyMyClasses"
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:gravity="center_vertical"
-                                                android:onClick="@{vm::onClick}"
-                                                android:paddingVertical="12dp">
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="24dp"
+                                                        android:fontFamily="@font/inter_medium"
+                                                        android:text="Attendance"
+                                                        android:textColor="@color/_3b3b3b"
+                                                        android:textSize="14sp" />
 
-                                                <ImageView
-                                                    android:layout_width="18dp"
-                                                    android:layout_height="18dp"
-                                                    android:contentDescription="@string/time_table"
-                                                    android:src="@drawable/ic_myclasses"
-                                                    app:tint="@color/_3b3b3b" />
-
-                                                <TextView
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginStart="24dp"
-                                                    android:fontFamily="@font/inter_medium"
-                                                    android:text="@string/my_classes"
-                                                    android:textColor="@color/_3b3b3b"
-                                                    android:textSize="14sp" />
-
-                                            </LinearLayout>
-
-                                            <LinearLayout
-                                                android:id="@+id/lyAllAssignment"
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:gravity="center_vertical"
-                                                android:onClick="@{vm::onClick}"
-                                                android:paddingVertical="12dp">
-
-                                                <ImageView
-                                                    android:layout_width="18dp"
-                                                    android:layout_height="18dp"
-                                                    android:contentDescription="All Assignments"
-                                                    android:src="@drawable/ic_teacher_assignment"
-                                                    app:tint="@color/_3b3b3b" />
-
-                                                <TextView
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginStart="24dp"
-                                                    android:fontFamily="@font/inter_medium"
-                                                    android:text="Assignments"
-                                                    android:textColor="@color/_3b3b3b"
-                                                    android:textSize="14sp" />
-
-                                            </LinearLayout>
-
-                                            <LinearLayout
-                                                android:id="@+id/lySubjectsAttendance"
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:gravity="center_vertical"
-                                                android:onClick="@{vm::onClick}"
-                                                android:paddingVertical="12dp">
-
-                                                <ImageView
-                                                    android:layout_width="18dp"
-                                                    android:layout_height="18dp"
-                                                    android:contentDescription="Subject Attendance"
-                                                    android:src="@drawable/ic_subjects_attendance"
-                                                    app:tint="@color/_3b3b3b" />
-
-                                                <TextView
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginStart="24dp"
-                                                    android:fontFamily="@font/inter_medium"
-                                                    android:text="Attendance"
-                                                    android:textColor="@color/_3b3b3b"
-                                                    android:textSize="14sp" />
+                                                </LinearLayout>
 
                                             </LinearLayout>
 

@@ -5,7 +5,6 @@ import android.view.View
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
-import com.allnetworks.allnetworks_school_management_system.BR
 import com.allnetworks.allnetworks_school_management_system.R
 import com.allnetworks.allnetworks_school_management_system.models.DummyModel
 import com.allnetworks.allnetworks_school_management_system.recycleradapter.RecyclerAdapter
@@ -23,7 +22,7 @@ class NewAssignmentVM @Inject constructor() : ViewModel() {
     //    drop-down state
     var itemState: ObservableField<String> = ObservableField("")
     var isDropDownState: ObservableBoolean = ObservableBoolean(false)
-    val adapterState = RecyclerAdapter<DummyModel>(R.layout.item_store_type, false, BR.model)
+    val adapterState = RecyclerAdapter<DummyModel>(R.layout.item_store_type)
 
     var dueDate: ObservableField<String> = ObservableField("")
 

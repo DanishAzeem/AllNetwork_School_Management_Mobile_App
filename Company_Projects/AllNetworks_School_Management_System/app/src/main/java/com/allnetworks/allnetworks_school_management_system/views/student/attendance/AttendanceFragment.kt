@@ -1,6 +1,7 @@
 package com.allnetworks.allnetworks_school_management_system.views.student.attendance
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,5 +30,6 @@ class AttendanceFragment : Fragment(R.layout.fragment_attendance) {
         binding.ivBack.setOnClickListener {
             navigateBack()
         }
+
     }
 }

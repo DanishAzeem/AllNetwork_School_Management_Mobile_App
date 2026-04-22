@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.allnetworks.allnetworks_school_management_system.R
 import com.allnetworks.allnetworks_school_management_system.databinding.ItemTeacherAllAssignmentBinding
 import com.allnetworks.allnetworks_school_management_system.models.testing.AllAssignmentModel
-import com.allnetworks.allnetworks_school_management_system.utils.AppController
 
 class AllAssignmentAdapter(
     private val dataList: ArrayList<AllAssignmentModel> = ArrayList(),

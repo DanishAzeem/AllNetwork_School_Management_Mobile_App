@@ -1,6 +1,7 @@
 package com.allnetworks.allnetworks_school_management_system.views.signUpProcess
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.core.graphics.toColorInt
@@ -26,7 +27,6 @@ class SigninFragment : Fragment(R.layout.fragment_signin) {
     private val inactiveIconBg = "#3e3826".toColorInt()
     private val activeIconStroke = "#c9a84c".toColorInt()
     private val inactiveIconStroke = "#5a5135".toColorInt()
-    private var selectedRole: String = "Student"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -39,14 +39,19 @@ class SigninFragment : Fragment(R.layout.fragment_signin) {
 ////            findNavController().navigate(R.id.action_signInFragment_to_homeFragment)
 //        }
 
-        binding.cardParent.setOnClickListener { selectRole("Parent") }
-        binding.cardStudent.setOnClickListener { selectRole("Student") }
-        binding.cardTeacher.setOnClickListener { selectRole("Teacher") }
+        binding.cardParent.setOnClickListener {
+            selectRole("Parent")
+        }
+        binding.cardStudent.setOnClickListener {
+            selectRole("Student")
+        }
+        binding.cardTeacher.setOnClickListener {
+            selectRole("Teacher")
+        }
     }
 
     private fun selectRole(role: String) {
-        selectedRole = role
-
+        AppController.userRole.set(role)
         setCardState(
             binding.cardParent,
             binding.barParent,
@@ -70,6 +75,7 @@ class SigninFragment : Fragment(R.layout.fragment_signin) {
             binding.iconTeacher,
             role == "Teacher"
         )
+
     }
 
     private fun setCardState(

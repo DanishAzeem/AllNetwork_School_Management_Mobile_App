@@ -24,12 +24,6 @@ class HomeVM @Inject constructor(): ViewModel() {
             R.id.layout_open_drawer -> {
                 AppController.navListener?.openDrawer()
             }
-//            R.id.fragmentAttendance -> view.navigateWithId(R.id.action_homeFragment_to_attendanceFragment)
-//            R.id.lyHome -> view.navigateWithId(R.id.homeFragment)
-//            R.id.lyGrades -> view.navigateWithId(R.id.action_homeFragment_to_resultGradesFragment)
-//            R.id.lyAssignment -> view.navigateWithId(R.id.action_homeFragment_to_homeWorkAssignmentFragment)
-//            R.id.lyAttendance -> view.navigateWithId(R.id.action_homeFragment_to_attendanceFragment)
-//            R.id.lyTimeTable -> view.navigateWithId(R.id.action_homeFragment_to_timeTableFragment)
         }
 
     }

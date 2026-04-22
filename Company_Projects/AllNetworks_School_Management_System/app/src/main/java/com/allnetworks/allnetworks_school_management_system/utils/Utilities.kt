@@ -11,3 +11,16 @@ fun Int.dpToPx(): Int {
 fun Context.dpToPx(dp: Int): Int {
     return (dp * resources.displayMetrics.density).toInt()
 }
+
+fun Context.getResult(fragmentName: String): Boolean {
+    var viewAttendance: Boolean = false
+    var addAttendance: Boolean = false
+    var submission: Boolean = false
+
+    return when (fragmentName) {
+        "view attendance" -> viewAttendance = true
+        "add attendance" -> addAttendance = true
+        "submission" -> submission = true
+        else -> false
+    } as Boolean
+}

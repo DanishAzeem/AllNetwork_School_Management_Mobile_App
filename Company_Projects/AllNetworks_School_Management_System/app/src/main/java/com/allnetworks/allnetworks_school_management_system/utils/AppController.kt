@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import androidx.databinding.ObservableField
 import com.allnetworks.allnetworks_school_management_system.interfaces.NavigationListener
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
@@ -25,6 +26,7 @@ class AppController: Application() {
         fun getAppControllerContext(): Context {
             return context?.get()!!
         }
+        var userRole: ObservableField<String> = ObservableField("")
     }
 
     override fun onCreate() {
@@ -59,6 +61,32 @@ class AppController: Application() {
         super.onTerminate()
         CoroutineScope(Dispatchers.IO).cancel() // Cancel all coroutines
     }
+
+    private fun setupActivityListener() {
+        registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
+            override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
+                // bypassProd
+//                activity.window.setFlags(
+//                    WindowManager.LayoutParams.FLAG_SECURE,
+//                    WindowManager.LayoutParams.FLAG_SECURE
+//                )
+            }
+
+            override fun onActivityStarted(p0: Activity) = Unit
+
+            override fun onActivityResumed(p0: Activity) = Unit
+
+            override fun onActivityPaused(p0: Activity) = Unit
+
+            override fun onActivityStopped(p0: Activity) = Unit
+
+            override fun onActivitySaveInstanceState(p0: Activity, p1: Bundle) = Unit
+
+            override fun onActivityDestroyed(p0: Activity) = Unit
+
+        })
+    }
+
 
 
 

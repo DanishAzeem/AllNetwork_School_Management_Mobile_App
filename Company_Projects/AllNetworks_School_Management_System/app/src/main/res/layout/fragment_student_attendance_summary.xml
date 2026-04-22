@@ -5,7 +5,12 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherMarkAttendance.studentSummary.StudentAttendanceSummaryVM" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,7 +64,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/inter_semi_bold"
                         android:gravity="center"
-                        android:text="View Attendance"
+                        android:text="@string/student_summary2"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -67,7 +72,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_marginEnd="25dp"
-                        android:contentDescription="View Attendance"
+                        android:contentDescription="@string/student_summary2"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/info_2" />
 
@@ -142,10 +147,10 @@
 
                                 <TextView
                                     style="@style/TV30dpInterMedium"
-                                    android:text="20"
+                                    android:text="12"
                                     android:textColor="@color/transparent_red"
                                     android:textStyle="normal"
-                                    tools:text="20" />
+                                    tools:text="12" />
 
                                 <TextView
                                     android:layout_width="75dp"
@@ -180,10 +185,10 @@
 
                                 <TextView
                                     style="@style/TV30dpInterMedium"
-                                    android:text="20"
+                                    android:text="18"
                                     android:textColor="@color/blue"
                                     android:textStyle="normal"
-                                    tools:text="20" />
+                                    tools:text="18" />
 
                                 <TextView
                                     android:layout_width="70dp"
@@ -199,11 +204,61 @@
                         </com.google.android.material.card.MaterialCardView>
                     </LinearLayout>
 
-
-                    <TextView
-                        style="@style/TV14dpInterMedium"
+                    <LinearLayout
+                        android:gravity="center"
                         android:layout_marginTop="12dp"
-                        android:text="Student summary" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_marginStart="7dp"
+                            style="@style/TV14dpInterMedium"
+                            android:text="@string/student_summary" />
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/createNewAttendance"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="7dp"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{viewModel::onClick}"
+                            android:text="+"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:backgroundTint="@color/white"
+                            app:cornerRadius="20dp"
+                            app:strokeColor="@color/app_primary"
+                            app:strokeWidth="1dp" />
+
+                    </LinearLayout>
+
+
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/lyperiodDetails"
+                        style="@style/Widget.Material3.CardView.Outlined"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp"
+                        app:cardUseCompatPadding="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="visible">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:itemCount="8"
+                            tools:listitem="@layout/item_summary_student_attendance" />
+
+
+                    </com.google.android.material.card.MaterialCardView>
 
 
 

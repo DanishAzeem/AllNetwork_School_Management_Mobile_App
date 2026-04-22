@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AllNetworks_School_Management_System</string>
+    <string name="app_name">AllNetworks School App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="select_your_role_to_get_started">Select your role to get started</string>
@@ -40,5 +40,13 @@
     <string name="submitted">Submitted</string>
     <string name="graded">Graded</string>
     <string name="download_file">download file</string>
+    <string name="student_list">Student list</string>
+    <string name="student_summary">Student summary</string>
+    <string name="student_summary2">Student Summary</string>
+    <string name="student_list2">Student List</string>
+    <string name="save_attendance">Save Attendance</string>
+    <string name="p">P</string>
+    <string name="a">A</string>
+    <string name="welcome_to_home_screen">Welcome to Home Screen</string>
 
 </resources>

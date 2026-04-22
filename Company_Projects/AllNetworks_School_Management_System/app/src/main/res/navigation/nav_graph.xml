@@ -152,10 +152,34 @@
         tools:layout="@layout/fragment_grade_submission" />
 
     <fragment
+        android:id="@+id/StudentSummaryAttendance"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherMarkAttendance.studentSummary.StudentAttendanceSummary"
+        android:label="StudentSummaryAttendance"
+        tools:layout="@layout/fragment_student_attendance_summary">
+        <action
+            android:id="@+id/action_studentSummaryAttendance_to_StudentCreateAttendanceList"
+            app:destination="@id/StudentCreateAttendance"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+
+    <fragment
         android:id="@+id/SubjectsAttendance"
         android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherMarkAttendance.SubjectsAttendance"
         android:label="SubjectsAttendance"
-        tools:layout="@layout/fragment_subjects_attendance" />
+        tools:layout="@layout/fragment_subjects_attendance">
+        <action
+            android:id="@+id/action_subjectAttendance_to_StudentSummaryAttendance"
+            app:destination="@id/StudentSummaryAttendance"
+            app:enterAnim="@anim/zoom_in_zoom_out"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/StudentCreateAttendance"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.teacher.teacherMarkAttendance.createAttendance.CreateAttendance"
+        android:label="StudentCreateAttendance"
+        tools:layout="@layout/fragment_create_attendance" />
 
 
 </navigation>

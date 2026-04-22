@@ -1,6 +1,7 @@
 package com.allnetworks.allnetworks_school_management_system.views.student.assignment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.FragmentManager
@@ -25,7 +26,6 @@ class AssignmentFragment : Fragment(R.layout.fragment_home_work_assignment) {
         binding = FragmentHomeWorkAssignmentBinding.bind(view)
         binding.viewModel = viewModel
         AppController.navListener?.isLockDrawer(true)
-
         val fragmentList = arrayListOf(
             FinishTask(),
             UnfinishTask()

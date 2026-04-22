@@ -21,7 +21,7 @@ class TeacherClasses : Fragment(R.layout.fragment_teacher_classes) {
 
         AppController.navListener?.isLockDrawer(true)
 
-        val data = arrayListOf("1", "2", "3")
+        val data = arrayListOf("01:00 PM - 02:00 PM", "2:00 PM - 02:30 PM", "02:30 PM - 03:00 PM")
 
         adapter = TeacherClassesAdapter(data)
 

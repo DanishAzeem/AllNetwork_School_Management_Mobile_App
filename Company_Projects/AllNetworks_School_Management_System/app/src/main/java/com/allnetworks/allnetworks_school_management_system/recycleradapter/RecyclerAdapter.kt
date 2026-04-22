@@ -10,8 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerAdapter<T : AbstractModel>(
     @LayoutRes val layoutId: Int,
-    private val isAnimation: Boolean = false,
-    val variableId: Int,  // Pass BR.model here
+    private val isAnimation: Boolean = false,  // Pass BR.model here
 
 ) : RecyclerView.Adapter<RecyclerAdapter.VH<T>>() {
 
@@ -25,10 +24,10 @@ class RecyclerAdapter<T : AbstractModel>(
 
     class VH<T : AbstractModel>(val binding: ViewDataBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(model: T, variableId: Int) {
-            binding.setVariable(variableId, model)
+        fun bind(model: T,) {
+////            binding.setVariable(model)
 //            binding.setVariable(BR.model, model)
-            binding.executePendingBindings()
+//            binding.executePendingBindings()
         }
     }
 
@@ -50,7 +49,7 @@ class RecyclerAdapter<T : AbstractModel>(
         model.viewHolder = holder
         model.isLastPosition = position == items.size - 1
 
-        holder.bind(model, variableId)
+        holder.bind(model)
 //        holder.binding.setVariable(BR.model, model)  // BR used here
 //        holder.binding.executePendingBindings()
 //        if (isAnimation) setAnimation(holder, position)

@@ -63,5 +63,8 @@
     <!-- Pair 8: Lavender -->
     <color name="lavender_bg">#F3E8FF</color>
     <color name="lavender_text">#6B21A8</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="splash_bg">#0f2952</color>
+
 
 </resources>

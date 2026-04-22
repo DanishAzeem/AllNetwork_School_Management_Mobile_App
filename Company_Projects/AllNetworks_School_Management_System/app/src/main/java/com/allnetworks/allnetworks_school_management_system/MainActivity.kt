@@ -1,24 +1,21 @@
 package com.allnetworks.allnetworks_school_management_system
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.allnetworks.allnetworks_school_management_system.databinding.ActivityMainBinding
 import com.allnetworks.allnetworks_school_management_system.interfaces.NavigationListener
 import com.allnetworks.allnetworks_school_management_system.utils.AppController
 import com.allnetworks.allnetworks_school_management_system.utils.AppController.Companion.navListener
-import com.allnetworks.allnetworks_school_management_system.views.student.assignment.AssignmentVM
 import dagger.hilt.android.AndroidEntryPoint
 import java.lang.ref.WeakReference
-import kotlin.getValue
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), NavigationListener {
@@ -75,6 +72,25 @@ class MainActivity : AppCompatActivity(), NavigationListener {
 
     override fun getMainActivity(): MainActivity {
         return this
+    }
+    fun sideDrawerOptionsVisibility() {
+        binding.lyTeacher.visibility = View.GONE
+        binding.lyStudent.visibility = View.GONE
+        if (viewModel.getUserRole.get() == "Teacher") {
+            binding.lyTeacher.visibility = View.VISIBLE
+        } else {
+            binding.lyStudent.visibility = View.VISIBLE
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        AppController.context = WeakReference(this)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        AppController.context = WeakReference(this)
     }
 
 }

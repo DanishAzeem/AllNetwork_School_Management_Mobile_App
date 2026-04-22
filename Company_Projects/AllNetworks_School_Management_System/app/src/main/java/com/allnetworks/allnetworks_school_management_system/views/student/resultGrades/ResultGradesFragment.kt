@@ -23,10 +23,19 @@ class ResultGradesFragment : Fragment(R.layout.fragment_result_grades) {
         binding.viewModel = viewModel
 
         val data = listOf(
-            listOf("Name", "Age", "City", "Roll No", "Address", "Address 2", "Address 3"),
-            listOf("Ali", "25", "Lahore", "roll-1230", "abc", "xyz", "mno"),
-            listOf("Ahmed", "28", "Karachi", "roll-1230", "abc", "xyz", "mno"),
-            listOf("Sara", "22", "Islamabad", "roll-1230", "abc", "xyz", "mno")
+            listOf("Sr. #", "Course Code", "Course Name", "Marks Obtained", "Grade Point", "Credit Hours", "Total GP"),
+
+            listOf("1", "CS 102 (N)", "Introduction to Information Communication Technology (Lab)", "85", "4.00", "1", "4.00"),
+            listOf("2", "CS 102 (N)", "Introduction to Information Communication Technology", "75", "3.30", "2", "6.60"),
+            listOf("3", "CS 103", "Programming Fundamentals (Lab)", "85", "4.00", "1", "4.00"),
+            listOf("4", "CS 103", "Programming Fundamentals", "90", "4.00", "3", "12.00"),
+            listOf("5", "ENG 100", "English I (Functional English)", "58", "2.00", "3", "6.00"),
+            listOf("6", "ISL 101", "Islamic Studies", "75", "3.30", "2", "6.60"),
+            listOf("7", "Life-1", "Life and Learning I", "73", "3.00", "1", "3.00"),
+            listOf("8", "MT 104", "Calculus & Analytical Geometry", "93", "4.00", "3", "12.00"),
+            listOf("9", "PHY 105", "Applied Physics", "89", "4.00", "3", "12.00"),
+
+            listOf("GPA: 3.48", "723/900", "19", "", "", "", "66.20")
         )
         addTable(data)
     }

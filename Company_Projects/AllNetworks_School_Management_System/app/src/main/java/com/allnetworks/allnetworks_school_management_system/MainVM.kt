@@ -2,6 +2,7 @@ package com.allnetworks.allnetworks_school_management_system
 
 import android.os.SystemClock
 import android.view.View
+import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import com.allnetworks.allnetworks_school_management_system.utils.AppController
@@ -12,7 +13,9 @@ import javax.inject.Inject
 class MainVM @Inject constructor(
 
 ) : ViewModel() {
+
     lateinit var navController: NavController
+    var getUserRole: ObservableField<String> = ObservableField("")
     private var mLastClickTime: Long = 0
 
     fun onClick(view: View) {
@@ -33,6 +36,5 @@ class MainVM @Inject constructor(
 
 
         }
-
     }
 }

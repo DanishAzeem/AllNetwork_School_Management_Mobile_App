@@ -1,8 +1,9 @@
 package com.allnetworks.allnetworks_school_management_system.views.signUpProcess
 
+import android.os.Bundle
 import android.os.SystemClock
-import android.util.Log
 import android.view.View
+import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import com.allnetworks.allnetworks_school_management_system.R
 import com.allnetworks.allnetworks_school_management_system.utils.navigateWithId
@@ -12,19 +13,24 @@ import javax.inject.Inject
 @HiltViewModel
 class SignInVM @Inject constructor(
 
-): ViewModel(){
+) : ViewModel() {
 
-    private var mLastClickTime:Long = 0
-    fun onClick(view: View){
+    val userRole: ObservableField<String> = ObservableField("")
+    private var mLastClickTime: Long = 0
+    fun onClick(view: View) {
         if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
             return
         }
         mLastClickTime = SystemClock.elapsedRealtime()
 
-        when(view.id){
+        when (view.id) {
             R.id.loginBtn -> {
-                Log.d("Signin Fragment ", "Called")
-                view.navigateWithId(R.id.action_signInFragment_to_homeFragment)
+                view.navigateWithId(
+                    R.id.action_signInFragment_to_homeFragment,
+                    Bundle().apply {
+                        putString("userRole", userRole.toString())
+                    }
+                )
             }
 
         }
