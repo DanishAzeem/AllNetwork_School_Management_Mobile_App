@@ -181,5 +181,23 @@
         android:label="StudentCreateAttendance"
         tools:layout="@layout/fragment_create_attendance" />
 
+    <fragment
+        android:id="@+id/ParentFeeManagement"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.parent.feeManagement.FeeManagement"
+        android:label="ParentFeeManagement"
+        tools:layout="@layout/fragment_fee_management" />
+
+    <fragment
+        android:id="@+id/ParentAttendance"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.parent.attendance.ParentAttendance"
+        android:label="ParentAttendance"
+        tools:layout="@layout/fragment_parent_attendance" />
+
+    <fragment
+        android:id="@+id/ParentHomeWork"
+        android:name="com.allnetworks.allnetworks_school_management_system.views.parent.parentHomeWork.ParentHomeWork"
+        android:label="ParentHomeWork"
+        tools:layout="@layout/fragment_parent_home_work" />
+
 
 </navigation>

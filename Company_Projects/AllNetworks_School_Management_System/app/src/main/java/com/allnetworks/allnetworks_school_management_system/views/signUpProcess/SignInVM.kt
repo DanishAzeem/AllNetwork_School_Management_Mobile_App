@@ -15,7 +15,6 @@ class SignInVM @Inject constructor(
 
 ) : ViewModel() {
 
-    val userRole: ObservableField<String> = ObservableField("")
     private var mLastClickTime: Long = 0
     fun onClick(view: View) {
         if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
@@ -25,16 +24,9 @@ class SignInVM @Inject constructor(
 
         when (view.id) {
             R.id.loginBtn -> {
-                view.navigateWithId(
-                    R.id.action_signInFragment_to_homeFragment,
-                    Bundle().apply {
-                        putString("userRole", userRole.toString())
-                    }
-                )
+                view.navigateWithId(R.id.action_signInFragment_to_homeFragment)
             }
-
         }
-
     }
 
 

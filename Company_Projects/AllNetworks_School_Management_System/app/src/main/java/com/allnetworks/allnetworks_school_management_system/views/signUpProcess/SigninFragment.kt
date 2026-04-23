@@ -31,13 +31,8 @@ class SigninFragment : Fragment(R.layout.fragment_signin) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSigninBinding.bind(view)
-//        binding.viewModel = viewModel
         binding.viewModel = viewModel
 
-//        binding.loginBtn.setOnClickListener {
-//            Toast.makeText(context, "NASDAQ", Toast.LENGTH_LONG).show()
-////            findNavController().navigate(R.id.action_signInFragment_to_homeFragment)
-//        }
 
         binding.cardParent.setOnClickListener {
             selectRole("Parent")

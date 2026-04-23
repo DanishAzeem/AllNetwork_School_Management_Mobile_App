@@ -1,7 +1,6 @@
 package com.allnetworks.allnetworks_school_management_system
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.activity.viewModels
@@ -36,6 +35,7 @@ class MainActivity : AppCompatActivity(), NavigationListener {
         viewModel.navController = findNavController(R.id.fragmentMain)
 //        binding.bottomNavigationView.setupWithNavController(viewModel.navController)
         navListener = this
+        viewModel.getUserRole.set(AppController.userRole.get())
     }
 
     override fun isLockDrawer(isLock: Boolean) {
@@ -73,11 +73,16 @@ class MainActivity : AppCompatActivity(), NavigationListener {
     override fun getMainActivity(): MainActivity {
         return this
     }
+
     fun sideDrawerOptionsVisibility() {
         binding.lyTeacher.visibility = View.GONE
         binding.lyStudent.visibility = View.GONE
-        if (viewModel.getUserRole.get() == "Teacher") {
+        binding.lyParent.visibility = View.GONE
+        if (AppController.userRole.get() == "Teacher") {
             binding.lyTeacher.visibility = View.VISIBLE
+        }
+        else if (AppController.userRole.get() == "Parent") {
+            binding.lyParent.visibility = View.VISIBLE
         } else {
             binding.lyStudent.visibility = View.VISIBLE
         }

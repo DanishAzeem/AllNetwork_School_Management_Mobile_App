@@ -33,6 +33,9 @@ class MainVM @Inject constructor(
 //            R.id.lyAllAssignment -> navController.navigate(R.id.AllSubmissions)
             R.id.lyAllAssignment -> navController.navigate(R.id.AllAssignment)
             R.id.lySubjectsAttendance -> navController.navigate(R.id.SubjectsAttendance)
+            R.id.lyFeeManagement -> navController.navigate(R.id.ParentFeeManagement)
+            R.id.lyParentAttendance -> navController.navigate(R.id.ParentAttendance)
+            R.id.lyParentHomeWork -> navController.navigate(R.id.ParentHomeWork)
 
 
         }

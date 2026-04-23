@@ -24,6 +24,7 @@ class Home : Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.bind(view)
         binding.viewModel = viewModel
         navListener?.isLockDrawer(false)
+
         navListener?.getMainActivity()?.sideDrawerOptionsVisibility()
 
         val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.rotate)

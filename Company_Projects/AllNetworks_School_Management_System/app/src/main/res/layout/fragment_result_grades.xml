@@ -88,5 +88,6 @@
 
             </androidx.core.widget.NestedScrollView>
         </HorizontalScrollView>
+
     </LinearLayout>
 </layout>

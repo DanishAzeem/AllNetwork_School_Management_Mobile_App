@@ -73,7 +73,7 @@
                             android:layout_height="match_parent" />
 
                         <FrameLayout
-                            android:layout_width="228dp"
+                            android:layout_width="238dp"
                             android:layout_height="match_parent"
                             android:elevation="9dp">
 
@@ -390,6 +390,97 @@
                                                 </LinearLayout>
 
                                             </LinearLayout>
+
+                                        <LinearLayout
+                                            android:id="@+id/lyParent"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:id="@+id/lyFeeManagement"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/fee_management"
+                                                    android:src="@drawable/ic_fee_management"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/fee_management"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyParentAttendance"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/attendance"
+                                                    android:src="@drawable/ic_parent_attendance"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/attendance"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/lyParentHomeWork"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_vertical"
+                                                android:onClick="@{vm::onClick}"
+                                                android:paddingVertical="12dp">
+
+                                                <ImageView
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:contentDescription="@string/home_work"
+                                                    android:src="@drawable/ic_parent_home_work"
+                                                    app:tint="@color/_3b3b3b" />
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="24dp"
+                                                    android:fontFamily="@font/inter_medium"
+                                                    android:text="@string/home_work"
+                                                    android:textColor="@color/_3b3b3b"
+                                                    android:textSize="14sp" />
+
+                                            </LinearLayout>
+
+
+
+
+                                        </LinearLayout>
+
+
 
                                             <LinearLayout
                                                 android:id="@+id/lyTermsAndConditions"
